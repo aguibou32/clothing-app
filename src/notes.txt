@@ -1,0 +1,12 @@
+for react router: 
+npm i react-router-dom
+
+import { BrowserRouter} from "react-router-dom"; // This has to be wrapper on the app like the following:
+
+<React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+
+  
