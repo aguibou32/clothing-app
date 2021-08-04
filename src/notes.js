@@ -48,4 +48,24 @@ const HomePage = (props) => (
 
   // One important thing, the 3 props passed by Route to the component, are only accessible to that specific component, it is not accessible to the children of that component
 
+// WithRouter(MenuItem) allows us to receive the receive the 3 props passed from the Router to the HomePage without having to drill them because remember, Router passes the 3 props to HomePage (and it stops there) but we need the 3 props in MemuItem component so to avoid passing them from HomePage to Directory and from Directory to MenuItem, we use the withRouter HOC (Higher Order Component) directly in MenuItem to get the 3 props (history, location match)
 
+
+// CLASS BASED COMPONENT IS USED WHEN WE NEED TO USE DATA IN THE COMPONENT, FUNCTIONAL COMPONENT WHEN DO NOT NEED DATA IN THE COMPONENT
+
+// The reason we use id on each item is to help react not re-render all the list when one item changes, therefore it helps making it more efficient
+
+// Do not forget adding props in the constructor and in the super() method)
+
+constructor(props) {
+  super(props);
+  this.state = {
+    collections: SHOP_DATA,
+  };
+}
+
+
+// WHEN WE ARE PASSING THE DATA (SHOP_DATA) VERY IMPORTANT IMPORTANT TO REMEMBER IT IS AN ARRAY INSIDE ANOTHER ARRAY
+
+
+// rfce to create a functional component, rcc to create a class component 

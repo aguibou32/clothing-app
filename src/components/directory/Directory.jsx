@@ -38,17 +38,19 @@ export default class Directory extends Component {
                   title: 'mens',
                   imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                   size: 'large',
-                  linkUrl: 'shop/mens'
+                  linkUrl: 'shop/men'
                 }
               ]
         }
     }
 
     render() {
+      const sections = this.state.sections;
+
         return (
             <div className="directory-menu">
-                {this.state.sections.map(({id, title, imageUrl, size, linkUrl}) => (
-                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} linkUrl={linkUrl} />
+                {sections.map(({id, ...otherSectionProps}) => (
+                    <MenuItem key={id} {...otherSectionProps} />
                 ))}
             </div>
         )
