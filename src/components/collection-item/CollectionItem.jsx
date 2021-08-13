@@ -2,7 +2,7 @@ import React from "react";
 import './CollectionItem.scss';
 
 function CollectionItem({name, imageUrl, price}) {
-  console.log(imageUrl);
+  // console.log(imageUrl);
 
   return (
     <div className="collection-item">
