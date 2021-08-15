@@ -169,3 +169,45 @@ const {email, password} = this.state;
             label="email"
             required
           />
+          Question 1:
+          
+
+
+
+
+
+Whenever we call the onAuthStateChanged() or onSnapshot() methods from our auth  library or referenceObject, we get back a function that lets us unsubscribe from the listener we just instantiated. Which lifecycle method should we use to call that unsubscribe method in?
+
+- componentWillUnmount is the reponse because:
+Calling the unsubscribe function when the component is about to unmount is the best way to make sure we don't get any memory leaks in our application related to listeners still being open even if the component that cares about the listener is no longer on the page.
+
+
+
+
+
+***********************************REDUX***************************************************************
+npm i redux react-logger react-redux
+
+
+// 1. we installing the redux library itself
+// 2. we install a react middleware called react-logger which basically just sits between our actions and reducers. its logs the state before and after the action generator hits the reducer
+// 3. react-redux is middleman that allows us to use redux 
+
+
+
+
+// JUST LIKE THE BROWSERROUTER WE USED IN THE index.js TO MAKE ROUTING AVAILABLE TO ALL OUR APP, WE DO THE SAME FOR PROVIDER TO GIVE ACCESS TO THE STORE TO ALL OUR APPLICATION
+
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser // access the state, then the root reducer, the currentUser slice state
+}
+);
+export default connect(mapStateToProps)(Header);
+
+this function is a higher order function (Tony Stark and Iron Man Suit analogy) it allows us to connect to the redux store
+{/* Before we started using redux we had to pass the current user state to the Header component to be used on the Sign In/Sign Out link */}
+
+        <Header currentUser={this.state.currentUser}/>
+
+        <Header/>  {/* Now that we have set up redux in our Header component, we dont need to pass the currentUser state as a prop anymore, we just render the Header app as it is*/}
+        
