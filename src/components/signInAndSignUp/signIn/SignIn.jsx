@@ -27,7 +27,7 @@ export default class signIn extends Component {
 
 
     } catch (error) {
-      console.log("signing in error: ", error);
+      alert(error.message);
     }
   };
 
