@@ -11,7 +11,6 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 currentUser: action.payload
             } // we basically saying copy everything that is in the current user and change the state of the currentUser
-            break;
     
         default:
             return state;

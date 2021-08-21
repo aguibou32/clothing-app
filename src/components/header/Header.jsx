@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 // before using redux, this component Header was accessing the current user from the parent component App
 
 function Header({ currentUser, hidden }) {
-  console.log('value of hidden from the store: ', hidden);
+  // console.log('value of hidden from the store: ', hidden);
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -23,7 +23,7 @@ function Header({ currentUser, hidden }) {
           Shop
         </Link>
         <Link className="option" to="/contact">
-          Contact
+           Contact Us
         </Link>
         {currentUser ? (
           <div className="option" onClick={() => { auth.signOut() }}>Sign Out</div>

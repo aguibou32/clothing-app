@@ -75,7 +75,7 @@ class App extends React.Component {
         </Switch> */}
         {/* Before we started using redux we had to pass the current user state to the Header component to be used on the Sign In/Sign Out link */}
         {/* <Header currentUser={this.state.currentUser}/> */}
-        <Header />{" "}
+        <Header />
         {/* Now that we have set up redux in our Header component, we dont need to pass the currentUser state as a prop anymore, we just render the Header app as it is*/}
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -87,6 +87,7 @@ class App extends React.Component {
             path="/signIn"
             render={() =>
               this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+              // we can access the state of the currentUser here coz we have passed through mapStateToProps
             }
           />
         </Switch>
@@ -95,7 +96,7 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({ // state here is the state in our redux 
   currentUser: state.user.currentUser, // access the state, then the root reducer, the currentUser slice state
 });
 
